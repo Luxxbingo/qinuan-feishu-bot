@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/health",
-      "destination": "/api/health"
+      "destination": "/api"
     },
     {
       "source": "/feishu/events",
-      "destination": "/api/feishu/events"
+      "destination": "/api"
     }
   ]
 }
