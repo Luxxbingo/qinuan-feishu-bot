@@ -1,0 +1,38 @@
+目标：
+用 Vercel 部署「七暖顶梁柱」飞书机器人，避开 Render 绑卡。
+
+要上传到 GitHub 的文件：
+- api/health.py
+- api/feishu/events.py
+- vercel.json
+- requirements.txt
+
+部署步骤：
+1. 打开 https://vercel.com/
+2. 用 GitHub 登录。
+3. 点 Add New -> Project。
+4. 选择 qinuan-feishu-bot 这个仓库。
+5. Framework Preset 选 Other。
+6. Build Command 留空。
+7. Output Directory 留空。
+8. Install Command 留空或保持默认。
+9. Environment Variables 添加：
+   BOT_NAME=七暖顶梁柱
+   OPENAI_MODEL=gpt-5-mini
+   MAX_HISTORY=12
+   OPENAI_API_KEY=你的 OpenAI API Key
+   FEISHU_APP_ID=你的飞书 App ID
+   FEISHU_APP_SECRET=你的飞书 App Secret
+   FEISHU_VERIFICATION_TOKEN=
+   ALLOWED_OPEN_IDS=
+   BOSS_OPEN_IDS=
+10. 点 Deploy。
+
+部署成功后，Vercel 会给一个地址，例如：
+https://qinuan-feishu-bot.vercel.app
+
+飞书事件回调填写：
+https://qinuan-feishu-bot.vercel.app/feishu/events
+
+测试健康检查：
+https://qinuan-feishu-bot.vercel.app/health
